@@ -36,50 +36,74 @@ Antes de empezar, asegúrate de tener el entorno de desarrollo configurado.
 
 ## ⚡ Guía de Uso
 
-Sigue los pasos para cada proyecto. Todos los comandos deben ejecutarse desde la carpeta raíz del proyecto correspondiente (ej. `cd electron`).
+Desde la raíz del proyecto, puedes usar los siguientes comandos para gestionar ambos proyectos fácilmente.
 
-### 1. Proyecto Electron (`/electron`)
+### Comandos Disponibles
 
-#### Instalación de Dependencias
+#### Validación de Dependencias
+```bash
+npm run check
+```
+Valida que todas las dependencias del sistema (Rust, C++, etc.) y npm estén instaladas correctamente.
+
+#### Desarrollo
+```bash
+# Ejecutar Electron en modo desarrollo
+npm run dev:electron
+
+# Ejecutar Tauri en modo desarrollo
+npm run dev:tauri
+```
+
+#### Construcción (Build)
+```bash
+# Construir ambos proyectos
+npm run build
+
+# Construir solo Electron
+npm run build:electron
+
+# Construir solo Tauri
+npm run build:tauri
+```
+
+Los instaladores generados se copian automáticamente a la carpeta `./output/<framework>/`.
+
+### Compatibilidad Cross-Platform
+
+Los scripts están diseñados para funcionar en Windows, macOS y Linux. El sistema detecta automáticamente el SO y usa los comandos apropiados (`npm` en Unix, `npm.cmd` en Windows).
+
+### Estructura de Salida
+
+```
+./output/
+├── electron/     # Instaladores de Electron
+│   ├── app.exe
+│   └── ...
+└── tauri/        # Instaladores de Tauri
+    ├── app.msi
+    ├── app.exe
+    └── ...
+```
+
+### Proyectos Individuales
+
+Si prefieres trabajar en un proyecto específico, puedes ir a su carpeta y usar los comandos tradicionales.
+
+#### 1. Proyecto Electron (`/electron`)
+
 ```bash
 cd electron
 npm install
+npm start          # Desarrollo
+npm run make       # Build
 ```
 
-#### Ejecutar en Modo Desarrollo
-Esto abrirá la ventana de la aplicación para pruebas.
-```bash
-npm start
-```
+#### 2. Proyecto Tauri (`/tauri`)
 
-#### Compilar y Empaquetar (Build)
-Este comando generará los instaladores en la carpeta `/electron/out/make`.
-* `.exe` para Windows.
-* `.deb` para Linux.
-
-```bash
-npm run make
-```
-
-### 2. Proyecto Tauri (`/tauri`)
-
-#### Instalación de Dependencias
 ```bash
 cd tauri
 npm install
-```
-
-#### Ejecutar en Modo Desarrollo
-La primera vez puede tardar más, ya que compila el backend de Rust.
-```bash
-npm run tauri dev
-```
-
-#### Compilar y Empaquetar (Build)
-Este comando generará los instaladores en la carpeta `/tauri/src-tauri/target/release/bundle/`.
-* `.msi` para Windows.
-* `.deb` y `.AppImage` para Linux.
-
-```bash
-npm run tauri build
+npm run tauri dev  # Desarrollo
+npm run tauri build # Build
 ```
