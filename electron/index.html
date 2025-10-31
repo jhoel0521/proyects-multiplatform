@@ -2,12 +2,241 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-
+    <title>Mi Primera App con Electron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-    <script type="module" src="/src/renderer.ts"></script>
+    <div class="min-h-screen w-screen overflow-x-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <!-- Header con fondo -->
+      <header class="border-b border-purple-800/20 bg-slate-900/80 backdrop-blur-sm">
+        <div class="w-full px-6 py-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-2xl font-bold text-white">
+                Mi Primera App con Electron
+              </h1>
+              <p class="text-purple-300">
+                Powered by Electron Stack
+              </p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-300" id="current-time">Cargando...</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="w-full py-10">
+        <div class="w-full px-6 text-center">
+          <div class="mb-8">
+            <h2 class="mb-4 text-4xl font-bold text-white">
+              Mi
+              <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Primera App con Electron
+              </span>
+            </h2>
+            <p class="mx-auto max-w-2xl text-lg text-gray-300">
+              He desarrollado esta aplicación de escritorio usando Electron para crear una experiencia nativa multiplataforma
+            </p>
+          </div>
+
+          <!-- Tech Stack Cards -->
+          <div class="mx-auto w-full max-w-6xl">
+            <h3 class="mb-6 text-center text-2xl font-semibold text-white">
+              Tecnologías que utilicé
+            </h3>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <!-- Electron -->
+              <div class="rounded-xl border border-blue-500/30 bg-slate-800/60 p-6 backdrop-blur-sm">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/20">
+                  <span class="text-2xl">⚛️</span>
+                </div>
+                <h4 class="mb-2 text-center font-semibold text-white">
+                  Electron
+                </h4>
+                <p class="text-center text-sm text-gray-300">
+                  Framework para crear aplicaciones de escritorio con tecnologías web
+                </p>
+              </div>
+
+              <!-- TypeScript -->
+              <div class="rounded-xl border border-blue-500/30 bg-slate-800/60 p-6 backdrop-blur-sm">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/20">
+                  <span class="text-2xl">🔷</span>
+                </div>
+                <h4 class="mb-2 text-center font-semibold text-white">
+                  TypeScript
+                </h4>
+                <p class="text-center text-sm text-gray-300">
+                  Superset de JavaScript con tipado estático para código más robusto
+                </p>
+              </div>
+
+              <!-- Node.js -->
+              <div class="rounded-xl border border-green-500/30 bg-slate-800/60 p-6 backdrop-blur-sm">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-500/20">
+                  <span class="text-2xl">�</span>
+                </div>
+                <h4 class="mb-2 text-center font-semibold text-white">
+                  Node.js
+                </h4>
+                <p class="text-center text-sm text-gray-300">
+                  Runtime de JavaScript para el backend y herramientas de desarrollo
+                </p>
+              </div>
+
+              <!-- Vite -->
+              <div class="rounded-xl border border-purple-500/30 bg-slate-800/60 p-6 backdrop-blur-sm">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/20">
+                  <span class="text-2xl">⚡</span>
+                </div>
+                <h4 class="mb-2 text-center font-semibold text-white">
+                  Vite
+                </h4>
+                <p class="text-center text-sm text-gray-300">
+                  Herramienta de build rápida para desarrollo moderno con hot reload
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="w-full py-10">
+        <div class="w-full px-6">
+          <div class="mx-auto max-w-4xl">
+            <h3 class="mb-6 text-center text-2xl font-semibold text-white">
+              Características implementadas
+            </h3>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm">
+                <h4 class="mb-3 flex items-center font-semibold text-white">
+                  <span class="mr-3 text-xl">🚀</span>
+                  Hot Reload
+                </h4>
+                <p class="text-gray-300">
+                  Configuré el hot reload para acelerar el desarrollo. Los cambios que hago se reflejan inmediatamente en la aplicación.
+                </p>
+              </div>
+
+              <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm">
+                <h4 class="mb-3 flex items-center font-semibold text-white">
+                  <span class="mr-3 text-xl">🎨</span>
+                  Diseño Moderno
+                </h4>
+                <p class="text-gray-300">
+                  Utilizo Tailwind CSS para crear una interfaz moderna y responsiva con un sistema de diseño consistente.
+                </p>
+              </div>
+
+              <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm">
+                <h4 class="mb-3 flex items-center font-semibold text-white">
+                  <span class="mr-3 text-xl">📱</span>
+                  Multiplataforma
+                </h4>
+                <p class="text-gray-300">
+                  Con una sola base de código, mi aplicación funciona en Windows, macOS y Linux, maximizando su alcance y usabilidad.
+                </p>
+              </div>
+
+              <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm">
+                <h4 class="mb-3 flex items-center font-semibold text-white">
+                  <span class="mr-3 text-xl">⚡</span>
+                  Optimizada
+                </h4>
+                <p class="text-gray-300">
+                  Implementé Vite para builds ultrarrápidos y optimización automática, garantizando una experiencia de usuario fluida.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info Panel -->
+      <section class="w-full py-10">
+        <div class="w-full px-6">
+          <div class="mx-auto max-w-4xl rounded-xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm">
+            <h3 class="mb-4 text-center text-xl font-semibold text-white">
+              Detalles de mi aplicación
+            </h3>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+              <div class="text-center">
+                <div class="mb-2 text-2xl text-purple-400">
+                  🏷️
+                </div>
+                <h4 class="font-semibold text-white">
+                  Mi Aplicación
+                </h4>
+                <p class="text-gray-300">
+                  Electron App
+                </p>
+              </div>
+              <div class="text-center">
+                <div class="mb-2 text-2xl text-blue-400">
+                  📦
+                </div>
+                <h4 class="font-semibold text-white">
+                  Versión Actual
+                </h4>
+                <p class="text-gray-300">
+                  1.0.0
+                </p>
+              </div>
+              <div class="text-center">
+                <div class="mb-2 text-2xl text-green-400">
+                  🌍
+                </div>
+                <h4 class="font-semibold text-white">
+                  Entorno
+                </h4>
+                <p class="text-gray-300">
+                  Desarrollo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-purple-800/30 bg-slate-900/50 py-6 backdrop-blur-sm">
+        <div class="w-full px-6 text-center">
+          <p class="text-gray-400">
+            Desarrollado para una actividad grupal en la UPDS
+            <span class="text-purple-400">
+              , teniendo como máximo protagonista a Electron
+            </span>
+          </p>
+          <p class="mt-2 text-sm text-gray-500">
+            Se puede editar en
+            <code class="rounded bg-slate-800 px-2 py-1 text-purple-300">
+              index.html
+            </code>
+            y ver los cambios instantáneamente con hot reload!
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleString('es-ES', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        });
+        document.getElementById('current-time').textContent = timeString;
+      }
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
   </body>
 </html>
