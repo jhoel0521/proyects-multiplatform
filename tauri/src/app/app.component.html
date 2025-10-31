@@ -1,21 +1,117 @@
-<main class="container">
-  <h1>Welcome to Tauri + Angular!</h1>
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
+  <!-- Hero Section -->
+  <header class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2">Mi Primera App con Tauri</h1>
+        <p class="text-xl text-gray-600">Aplicación multiplataforma construida con Rust y Angular</p>
+      </div>
+    </div>
+  </header>
 
-  <div class="row">
-    <a href="https://tauri.app" target="_blank">
-      <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-    </a>
-    <a href="https://angular.io" target="_blank">
-      <img src="/assets/angular.svg" class="logo angular" alt="Angular logo" />
-    </a>
-  </div>
-  <p>Click on the logos to learn more about the frameworks</p>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <!-- Tech Stack Cards -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Tecnologías Utilizadas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Tauri Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white font-bold text-xl">T</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Tauri</h3>
+          </div>
+          <p class="text-gray-600">Framework para aplicaciones de escritorio seguras y ligeras usando Rust y web technologies.</p>
+        </div>
 
-  <form class="row" (submit)="greet($event, greetInput.value)">
-    <input #greetInput id="greet-input" placeholder="Enter a name..." />
-    <button type="submit">Greet</button>
-  </form>
-  <p>{{ greetingMessage }}</p>
+        <!-- Rust Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white font-bold text-xl">R</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Rust</h3>
+          </div>
+          <p class="text-gray-600">Lenguaje de programación de sistemas enfocado en velocidad, seguridad y concurrencia.</p>
+        </div>
 
-  <router-outlet />
-</main>
+        <!-- Angular Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white font-bold text-xl">A</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Angular</h3>
+          </div>
+          <p class="text-gray-600">Framework de desarrollo web para crear aplicaciones dinámicas y escalables.</p>
+        </div>
+
+        <!-- TypeScript Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white font-bold text-xl">TS</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">TypeScript</h3>
+          </div>
+          <p class="text-gray-600">Superset de JavaScript que añade tipado estático y herramientas avanzadas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Características</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-2xl">🚀</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Rendimiento</h3>
+          <p class="text-gray-600">Aplicaciones rápidas y eficientes gracias a Rust en el backend.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-2xl">🔒</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Seguridad</h3>
+          <p class="text-gray-600">Arquitectura segura por defecto con el modelo de memoria de Rust.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-2xl">🌐</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Multiplataforma</h3>
+          <p class="text-gray-600">Ejecuta en Windows, macOS y Linux con una sola base de código.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Panel -->
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Información del Sistema</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Hora Actual</h3>
+          <p class="text-gray-600 text-lg font-mono">{{ currentTime }}</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Estado</h3>
+          <p class="text-green-600 font-medium">Aplicación ejecutándose correctamente</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Router Outlet for navigation -->
+    <router-outlet />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; 2024 Mi Primera App con Tauri. Desarrollado con ❤️ usando Tauri y Angular.</p>
+    </div>
+  </footer>
+</div>
