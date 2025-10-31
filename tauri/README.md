@@ -80,3 +80,32 @@ npm run tauri build
 Encontrarás los archivos en la carpeta `/src-tauri/target/release/bundle/`.
 * 📦 En **Windows**, creará un instalador `.msi`.
 * 📦 En **Linux**, creará un paquete `.deb` y un `.AppImage`.
+
+## 🔧 Solución de Problemas
+
+### Error: "Failed to parse version `2` for crate `tauri`"
+Si ves este error al ejecutar `npm run tauri dev` o `npm run tauri build`, significa que las versiones de las dependencias en `src-tauri/Cargo.toml` no están en el formato correcto.
+
+**Solución:**
+Edita `src-tauri/Cargo.toml` y cambia las versiones de `"2"` a `"^2.0"` en las líneas de `tauri-build`, `tauri` y `tauri-plugin-opener`.
+
+Ejemplo:
+```toml
+[build-dependencies]
+tauri-build = { version = "^2.0", features = [] }
+
+[dependencies]
+tauri = { version = "^2.0", features = [] }
+tauri-plugin-opener = "^2.0"
+```
+
+Luego, ejecuta `npm run tauri dev` nuevamente.
+
+### Error de Linking en Windows
+Si obtienes errores como `linking with 'link.exe' failed`, asegúrate de tener instaladas las **Microsoft C++ Build Tools** con la workload "Desktop development with C++".
+
+Instálalas desde el **Visual Studio Installer** o con:
+```powershell
+winget install Microsoft.VisualStudio.2022.BuildTools
+```
+Luego, modifica la instalación para agregar la workload.
