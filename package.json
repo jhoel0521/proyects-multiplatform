@@ -1,0 +1,16 @@
+{
+  "name": "proyects-multiplatform",
+  "version": "1.0.0",
+  "description": "Proyecto multiplataforma con Electron y Tauri",
+  "scripts": {
+    "check": "node check.js",
+    "build": "node build.js",
+    "build:electron": "node build.js electron",
+    "build:tauri": "node build.js tauri",
+    "dev:electron": "cd electron && npm start",
+    "dev:tauri": "cd tauri && npm run tauri dev"
+  },
+  "keywords": ["electron", "tauri", "multiplatform"],
+  "author": "jhoel0521",
+  "license": "MIT"
+}
