@@ -29,10 +29,10 @@ if (platform === 'win32') {
   try {
     console.log('Verificando build-essential y dependencias (Linux)...');
     execSync('gcc --version', { stdio: 'pipe' });
-    execSync('pkg-config --modversion webkit2gtk-4.0', { stdio: 'pipe' });
+    execSync('pkg-config --modversion webkit2gtk-4.1', { stdio: 'pipe' });
     console.log('✅ Dependencias de Linux encontradas\n');
   } catch (error) {
-    console.log('❌ Dependencias faltantes en Linux. Ejecuta: sudo apt install build-essential libwebkit2gtk-4.0-dev\n');
+    console.log('❌ Dependencias faltantes en Linux. Ejecuta: sudo apt install build-essential libwebkit2gtk-4.1-dev\n');
   }
 }
 
