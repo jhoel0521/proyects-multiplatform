@@ -1,0 +1,5 @@
+# 1. Ignora todo (archivos, directorios y subdirectorios)
+*
+
+# 2. Crea una excepción para este archivo .gitignore
+!.gitignore
